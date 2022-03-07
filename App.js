@@ -1,18 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import TabNavigation from './src/navigations/TabNavigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>This will be a SpaceFlights News App!</Text>
-    </View>
+    <NavigationContainer>
+      <TabNavigation />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
