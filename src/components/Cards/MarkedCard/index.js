@@ -10,7 +10,7 @@ export default function MarkedCard({data}) {
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        navigation.navigate('News');
+        navigation.navigate('News', {source: data.url});
       }}>
       <Image
         source={{
@@ -21,7 +21,7 @@ export default function MarkedCard({data}) {
       <View>
         <Text style={styles.title}>{data.title}</Text>
         <View style={styles.iconView}>
-          <ShareButton />
+          <ShareButton url={data.url} />
           <BookmarkButton data={data} />
         </View>
       </View>

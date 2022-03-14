@@ -16,7 +16,7 @@ export default function NewsCard({data}) {
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        navigation.navigate('News');
+        navigation.navigate('News', {source: data.url});
       }}>
       <ImageBackground
         source={{
@@ -31,7 +31,7 @@ export default function NewsCard({data}) {
       <View style={styles.bottomView}>
         <Text style={styles.bottomTitle}>{data.newsSite}</Text>
         <View style={styles.iconView}>
-          <ShareButton />
+          <ShareButton url={data.url} />
           <BookmarkButton data={data} />
         </View>
       </View>

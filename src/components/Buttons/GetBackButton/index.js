@@ -12,7 +12,7 @@ export default function GetBackButton() {
       onPress={() => {
         navigation.goBack();
       }}>
-      <Ionicons name={'arrow-back'} size={30} color={'white'} />
+      <Ionicons name={'arrow-back'} size={20} color={'white'} />
     </TouchableOpacity>
   );
 }
@@ -23,8 +23,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'black',
     borderRadius: 90,
-    width: 40,
-    height: 40,
+    width: 25,
+    height: 25,
     marginLeft: 10,
+    borderWidth: 1,
+    borderColor: 'orange',
   },
 });
