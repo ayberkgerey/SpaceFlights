@@ -1,10 +1,31 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, StyleSheet, FlatList} from 'react-native';
+import NewsCard from '../../components/Cards/NewsCard';
 
 export default function HomeContainer() {
+  const [articles, setArticles] = useState([]);
+
+  const fetchArticles = async () => {
+    fetch('https://api.spaceflightnewsapi.net/v3/articles')
+      .then(response => response.json())
+      .then(responseJson => {
+        setArticles(responseJson);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchArticles();
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>HomeContainer</Text>
+      <FlatList
+        data={articles}
+        renderItem={({item}) => <NewsCard data={item} />}
+      />
     </View>
   );
 }
@@ -13,6 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'rgb(20,20,20)',
   },
 });
