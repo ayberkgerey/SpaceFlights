@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
   photoView: {
     width: '45%',
     height: '98%',
-    backgroundColor: 'orange',
     borderRadius: 15,
   },
   title: {

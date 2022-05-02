@@ -6,10 +6,13 @@ import {Share} from 'react-native-share';
 export default function ShareButton(props) {
   const shareNews = async () => {
     const shareOptions = {
-      message: 'Check this article from SpaceFlights : ',
+      title: 'Share via',
+      message: 'some message',
+      url: props.url,
     };
     try {
       const shareResponse = await Share.open(shareOptions);
+      console.log(shareResponse);
     } catch (error) {
       console.log('Error => ', error);
     }
