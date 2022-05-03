@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, FlatList} from 'react-native';
 import NewsCard from '../../components/Cards/NewsCard';
 import SplashScreen from 'react-native-splash-screen';
+import {StatusBar} from 'react-native';
 
 export default function HomeContainer() {
   const [articles, setArticles] = useState([]);
@@ -17,14 +18,11 @@ export default function HomeContainer() {
       });
   };
 
-  const timeOut = () => {
-    SplashScreen.hide();
-  };
-
   useEffect(() => {
+    StatusBar.setBarStyle('light-content', true);
     fetchArticles();
     setTimeout(() => {
-      timeOut();
+      SplashScreen.hide();
     }, 2000);
   }, []);
 
