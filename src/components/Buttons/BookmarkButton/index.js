@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {TouchableOpacity} from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {MarkContext} from '../../../contexts/MarkContext';
+import BookMarkIcon from '../../../assets/bookmark.svg';
 
 export default function BookmarkButton({data}) {
   const [markColor, setMarkColor] = useState('white');
@@ -20,20 +20,18 @@ export default function BookmarkButton({data}) {
   useEffect(() => {
     if (checkMark(data.id)) {
       setMarkColor('gold');
+    } else {
+      setMarkColor('white');
     }
   });
 
   return (
     <TouchableOpacity
+      style={{marginLeft: 10}}
       onPress={() => {
         changeColor();
       }}>
-      <FontAwesome
-        name={'bookmark'}
-        color={markColor}
-        size={20}
-        style={{marginLeft: 15}}
-      />
+      <BookMarkIcon fill={markColor} height={20} width={20} />
     </TouchableOpacity>
   );
 }

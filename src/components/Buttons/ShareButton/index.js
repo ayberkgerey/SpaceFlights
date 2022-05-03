@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {Share} from 'react-native-share';
+import ShareIcon from '../../../assets/share.svg';
 
 export default function ShareButton(props) {
   const shareNews = async () => {
@@ -23,7 +23,7 @@ export default function ShareButton(props) {
       onPress={() => {
         shareNews();
       }}>
-      <FontAwesome name={'share-alt'} color={'white'} size={20} />
+      <ShareIcon fill={'white'} width={20} height={20} />
     </TouchableOpacity>
   );
 }
