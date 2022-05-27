@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, StyleSheet, TouchableOpacity, Image, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import ShareButton from '../../Buttons/ShareButton';
 import BookmarkButton from '../../Buttons/BookmarkButton';
 
 export default function MarkedCard({data}) {
@@ -21,7 +20,6 @@ export default function MarkedCard({data}) {
       <View>
         <Text style={styles.title}>{data.title}</Text>
         <View style={styles.iconView}>
-          <ShareButton url={data.url} />
           <BookmarkButton data={data} />
         </View>
       </View>

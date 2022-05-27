@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import BookmarkButton from '../../Buttons/BookmarkButton';
-import ShareButton from '../../Buttons/ShareButton';
 
 export default function NewsCard({data}) {
   const navigation = useNavigation();
@@ -31,7 +30,6 @@ export default function NewsCard({data}) {
       <View style={styles.bottomView}>
         <Text style={styles.bottomTitle}>{data.newsSite}</Text>
         <View style={styles.iconView}>
-          <ShareButton url={data.url} />
           <BookmarkButton data={data} />
         </View>
       </View>
